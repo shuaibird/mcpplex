@@ -6,8 +6,15 @@ build-backend = "hatchling.build"
 name = "mcpplex"
 version = "0.1.0"
 description = "MCP log viewer TUI"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "shuaibird" }]
 requires-python = ">=3.10"
 dependencies = ["textual>=8.1.1"]
+
+[project.urls]
+Homepage = "https://github.com/shuaibird/mcpplex"
+Repository = "https://github.com/shuaibird/mcpplex"
 
 [project.scripts]
 mcpplex = "mcpplex:main"
