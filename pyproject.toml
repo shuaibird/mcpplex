@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcpplex"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP log viewer TUI"
 readme = "README.md"
 license = { text = "MIT" }

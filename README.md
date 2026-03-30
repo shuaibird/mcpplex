@@ -8,9 +8,9 @@ Built with [Textual](https://github.com/Textualize/textual).
 
 ## Screenshots
 
-![List view](assets/screenshot-list-view.svg)
+![List view](https://raw.githubusercontent.com/shuaibird/mcpplex/main/assets/screenshot-list-view.svg)
 
-![Detail view](assets/screenshot-detail-view.svg)
+![Detail view](https://raw.githubusercontent.com/shuaibird/mcpplex/main/assets/screenshot-detail-view.svg)
 
 ## Features
 
