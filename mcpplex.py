@@ -636,7 +636,7 @@ def main():
         _version = 'unknown'
 
     parser = argparse.ArgumentParser(description='mcpplex — MCP log TUI viewer')
-    parser.add_argument('--version', '-v', action='version', version=f'mcpplex {_version}')
+    parser.add_argument('-v', '--version', action='version', version=f'mcpplex {_version}')
     parser.add_argument('file', nargs='?', help='.log file (or pipe via stdin)')
     parser.add_argument('-f', '--follow', action='store_true', help='Follow file for new lines (like tail -f)')
     args = parser.parse_args()
