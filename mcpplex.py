@@ -2,6 +2,7 @@
 """mcpplex — MCP log viewer TUI."""
 
 import sys, re, json, argparse, threading, time
+from importlib.metadata import version as _pkg_version, PackageNotFoundError
 from datetime import datetime
 from textual.app import App, ComposeResult
 from textual.content import Content
@@ -629,7 +630,13 @@ class LogApp(App):
 # ── entrypoint ────────────────────────────────────────────────────────────────
 
 def main():
+    try:
+        _version = _pkg_version('mcpplex')
+    except PackageNotFoundError:
+        _version = 'unknown'
+
     parser = argparse.ArgumentParser(description='mcpplex — MCP log TUI viewer')
+    parser.add_argument('--version', '-v', action='version', version=f'mcpplex {_version}')
     parser.add_argument('file', nargs='?', help='.log file (or pipe via stdin)')
     parser.add_argument('-f', '--follow', action='store_true', help='Follow file for new lines (like tail -f)')
     args = parser.parse_args()
