@@ -1,5 +1,7 @@
+import sys
 import pytest
-from mcpplex import deep_parse, extract_json, fmt_raw_json, parse_line, _title_from_path
+from unittest.mock import patch
+from mcpplex import deep_parse, extract_json, fmt_raw_json, parse_line, _title_from_path, main
 
 
 # ── deep_parse ────────────────────────────────────────────────────────────────
@@ -127,3 +129,15 @@ def test_title_from_path_multi_word():
 
 def test_title_from_path_no_directory():
     assert _title_from_path("myserver.log") == "Myserver Log"
+
+
+# ── main ──────────────────────────────────────────────────────────────────────
+
+def test_main_no_args_tty_prints_help(capsys):
+    with patch("sys.argv", ["mcpplex"]), \
+         patch("sys.stdin.isatty", return_value=True):
+        with pytest.raises(SystemExit) as exc:
+            main()
+    assert exc.value.code == 0
+    captured = capsys.readouterr()
+    assert "usage" in captured.out.lower()

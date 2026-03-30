@@ -642,6 +642,9 @@ def main():
         if args.follow:
             print("--follow requires a file path, not stdin.")
             sys.exit(1)
+        if sys.stdin.isatty():
+            parser.print_help()
+            sys.exit(0)
         raw_lines   = sys.stdin.readlines()
         follow_path = None
 
