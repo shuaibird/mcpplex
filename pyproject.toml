@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcpplex"
+version = "0.1.0"
+description = "MCP log viewer TUI"
+requires-python = ">=3.10"
+dependencies = ["textual>=8.1.1"]
+
+[project.scripts]
+mcpplex = "mcpplex:main"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

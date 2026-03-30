@@ -25,20 +25,26 @@ Built with [Textual](https://github.com/Textualize/textual).
 ## Install
 
 ```
-pip install -r requirements.txt
+pipx install mcpplex
+```
+
+Or with pip:
+
+```
+pip install mcpplex
 ```
 
 ## Usage
 
 ```
 # View a log file
-python main.py mcp.log
+mcpplex mcp.log
 
 # Follow a log file for live updates
-python main.py -f mcp.log
+mcpplex -f mcp.log
 
 # Pipe from stdin
-cat mcp.log | python main.py
+cat mcp.log | mcpplex
 ```
 
 ## Keybindings
@@ -50,3 +56,12 @@ cat mcp.log | python main.py
 | `f`       | Toggle follow mode      |
 | `Escape`  | Close search / clear    |
 | `q`       | Quit                    |
+
+## Contributing
+
+```bash
+git clone https://github.com/shuaibird/mcpplex
+cd mcpplex
+pip install -e ".[dev]"
+pytest
+```
